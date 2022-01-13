@@ -34,13 +34,12 @@
 						</a>
 					</li>
 					<li class="nav-item">
-						<form class="search-bar">
-							<input type="text" class="form-control" placeholder="Enter keywords">
+						<form class="search-bar" action="" method="get">
+							<input type="text" class="form-control" name="key" placeholder="Enter keywords">
 							<a href="javascript:void();"><i class="icon-magnifier"></i></a>
 						</form>
 					</li>
 				</ul>
-
 				<ul class="navbar-nav align-items-center right-nav-link">
 					<li class="nav-item dropdown-lg">
 						<a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect"

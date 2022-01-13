@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\LoginGoogleController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\website\ProductController;
@@ -19,8 +19,8 @@ use App\Http\Controllers\website\HomeController;
 |
 */
 Route::get('/', [HomeController::class, 'index'])->name('welcome');
-Route::get('dang-nhap', [LoginGoogleController::class, 'Login'])->name('login.index');
-Route::post('dang-nhap', [LoginGoogleController::class, 'PostLogin']);
+Route::get('dang-nhap', [LoginController::class, 'Login'])->name('login.index');
+Route::post('dang-nhap', [LoginController::class, 'PostLogin']);
 Route::get('dang-ky', [RegisterController::class, 'Register'])->name('register.index');
 Route::get('quen-mat-khau', [ResetPasswordController::class, 'Password'])->name('resetpassword.index');
 

@@ -2,11 +2,18 @@
 @section('title','Danh Mục')
 @section('content')
 <div class="row">
+
 	<div class="col-md-12">
+		@if(Session::has('success'))
+		<p class="text-white">{{ Session::get('success') }}</p>
+		@elseif (Session::has('erorrs'))
+		<p class="text-white">{{ Session::get('erorrs') }}</p>
+		@endif
 		<div class="table-responsive">
-			<table class="table">
+			<table class="table" id="data-table">
 				<thead>
 					<tr>
+						<th scope="col">Check All</th>
 						<th scope="col">ID</th>
 						<th scope="col">Name</th>
 						<th scope="col">Active</th>
@@ -16,6 +23,7 @@
 				<tbody>
 					@foreach ($model as $c)
 					<tr>
+						<td><input name="select_all" value="" type="checkbox"></td>
 						<td>{{$loop->iteration}}</td>
 						<td>{{$c->name}}</td>
 						<td>@if ($c->active == 1)
@@ -39,7 +47,7 @@
 			</table>
 		</div>
 		<div class="d-flex justify-content-center">
-			{!! $model->links() !!}
+			{{$model->appends(request()->query())->links() }}
 		</div>
 	</div>
 </div>
@@ -70,5 +78,17 @@
 		   return false;
 	    });
 	});
+
+
+var dataTable = document.getElementById('data-table');
+var checkItAll = dataTable.querySelector('input[name="select_all"]');
+var inputs = dataTable.querySelectorAll('tbody>tr>td>input');
+checkItAll.addEventListener('change', function() {
+  if (checkItAll.checked) {
+    inputs.forEach(function(input) {
+      input.checked = true;
+    });  
+  }
+});
 </script>
 @endsection

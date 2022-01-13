@@ -44,7 +44,8 @@
 				</li>
 				<li class="nav-item"><a href="" class="nav-link">About</a></li>
 				<li class="nav-item"><a href="{{route('blog.index')}}" class="nav-link">Blog</a></li>
-				<li class="nav-item"><a href="" class="nav-link">Ckeck Out</a></li>
+				<li class="nav-item cta cta-colored"><a href="{{route('login.index')}}" class="nav-link"><span
+							class="icon-shopping_cart"></span>[0]</a></li>
 				<li class="nav-item cta cta-colored"><a href="{{route('cart.index')}}" class="nav-link"><span
 							class="icon-shopping_cart"></span>[0]</a></li>
 			</ul>

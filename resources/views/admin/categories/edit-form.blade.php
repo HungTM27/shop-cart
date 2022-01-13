@@ -26,6 +26,7 @@
 						</div>
 						<div class="d-flex justify-content-center">
 							<button type="submit" class="btn btn-sm btn-primary">Thêm</button>
+							<a href="{{ asset('categories.index') }}" class="btn btn-sm btn-danger">Huỷ</a>
 						</div>
 					</form>
 				</div>

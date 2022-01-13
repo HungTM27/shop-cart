@@ -89,7 +89,6 @@
 							</div>
 							<button type="submit" class="btn btn-light btn-block">Sign In</button>
 							<div class="text-center mt-3">Sign In With</div>
-
 							<div class="form-row mt-4">
 								<div class="form-group mb-0 col-6">
 									<button type="button" class="btn btn-light btn-block"><i

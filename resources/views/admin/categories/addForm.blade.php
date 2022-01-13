@@ -8,7 +8,7 @@
 			<div class="card">
 				<div class="card-body">
 					<div class="card-title">Thêm Danh Mục</div>
-					        <hr>
+					<hr>
 					<form action="" method="post">
 						@csrf
 						<div class="form-group">
@@ -16,9 +16,9 @@
 							<input type="text" name="name" class="form-control" id="input-1"
 								placeholder="Enter Your Name">
 						</div>
-                        @error('name')
-                        <p class="text-white mt-2">{{ $message }}</p>
-                        @enderror
+						@error('name')
+						<p class="text-white mt-2">{{ $message }}</p>
+						@enderror
 						<div class="form-group">
 							<label for="input-1">Active</label>
 							<select name="active" class="form-control">
@@ -29,6 +29,7 @@
 						</div>
 						<div class="d-flex justify-content-center">
 							<button type="submit" class="btn btn-sm btn-primary">Thêm</button>
+							<a href="" class="btn btn-sm btn-danger">Huỷ</a>
 						</div>
 					</form>
 				</div>
