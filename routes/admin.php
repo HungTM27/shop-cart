@@ -2,9 +2,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Dasboardh\DasboardhController;
 use App\Http\Controllers\Category\CategoriesController;
-// Route::get('dashboard', function(){
-// 	return "Admin Dashboard";
-//  });
+use App\Http\Controllers\Product\ProductController;
+use App\Http\Controllers\Auth\RegisterController;
+
 Route::get('dashboard',[DasboardhController::class, 'dashboard'])->name('dashboard.index');
  Route::prefix('danh-muc')->group(function(){
 	Route::get('/',[CategoriesController::class, 'index'])->name('categories.index');
@@ -15,8 +15,12 @@ Route::get('dashboard',[DasboardhController::class, 'dashboard'])->name('dashboa
 	Route::get('xoa-danh-muc/{id}',[CategoriesController::class, 'remove'])->name('categories.remove');
  });
  Route::prefix('san-pham')->group(function () {
-	return 'hihi';
+	Route::get('/',[ProductController::class, 'index'])->name('product.index');
  });
- 
+Route::prefix('tai-khoan')->group(function () {
+    Route::get('/', [RegisterController::class, 'index'])->name('register');
+    Route::get('sua-tai-khoan/{id}', [RegisterController::class, 'EditRegister'])->name('register.edit');
+});
+
 
 ?>

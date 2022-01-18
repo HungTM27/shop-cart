@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 	<meta name="description" content="" />
 	<meta name="author" content="" />
-	<title>Dashtreme Admin - Free Dashboard for Bootstrap 4 by Codervent</title>
+	<title>Login Page</title>
 	<!-- loader-->
 	@include('admin.layout-admin.style')
 </head>
@@ -37,16 +37,17 @@
 		</div>
 		<div class="card card-authentication1 mx-auto my-5">
 			<div class="card-body">
+				<a href="{{ route('welcome') }}" style="color:rgb(197, 145, 145);font-size:12px;"><i
+						class="fa fa-arrow-left p-1" aria-hidden="true"></i>Quay Lại</a>
 				<div class="card-content p-2">
 					<div class="text-center">
 						<img src="{{ asset('adminlte/images/logo-icon.png') }}" alt="logo icon">
 					</div>
 					<div class="card-body login-card-body">
-						@if(session('msg'))
-						<p class="text-white">{{session('msg')}}</p>
-						@else
-						<div class="card-title text-uppercase text-center py-3">Sign In</div>
+						@if(Session::has('login'))
+						<p class="text-white">{{Session('login')}}</p>
 						@endif
+						<div class="card-title text-uppercase text-center py-3"></div>
 						<form action="" method="post">
 							@csrf
 							<div class="form-group">
@@ -99,7 +100,6 @@
 											class="fa fa-twitter-square"></i> Twitter</button>
 								</div>
 							</div>
-
 						</form>
 					</div>
 				</div>

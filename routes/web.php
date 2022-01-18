@@ -19,9 +19,13 @@ use App\Http\Controllers\website\HomeController;
 |
 */
 Route::get('/', [HomeController::class, 'index'])->name('welcome');
-Route::get('dang-nhap', [LoginController::class, 'Login'])->name('login.index');
-Route::post('dang-nhap', [LoginController::class, 'PostLogin']);
+Route::prefix('dang-nhap')->group(function () {
+	Route::get('/', [LoginController::class, 'Login'])->name('login.index');
+	Route::post('dang-nhap', [LoginController::class, 'PostLogin']);
+	Route::get('dang-xuat', [LoginController::class, 'logout'])->name('logout.index');
+});
 Route::get('dang-ky', [RegisterController::class, 'Register'])->name('register.index');
+Route::post('dang-ky', [RegisterController::class, 'SaveRegister']);
 Route::get('quen-mat-khau', [ResetPasswordController::class, 'Password'])->name('resetpassword.index');
 
 Route::get('san-pham', [ProductController::class, 'index'])->name('product.index');

@@ -13,10 +13,19 @@ class LoginController extends Controller
             return view('admin.login.GoogleLogin');
     }
     public function PostLogin(LoginRequestForm $request){
-        if (Auth::attempt(['email' => $request->email, 'password' =>  $request->password, 'role' => 1])) {   
-            return redirect()->route('dashboard.index');
-        } else {
-            return redirect()->route('welcome');
+        if (Auth::attempt(['email' => $request->email, 'password' =>  $request->password])) { 
+            if (Auth::user()->role == 1) {
+                return redirect()->route('dashboard.index');
+            }
+            elseif (Auth::user()->role == 2) {
+                return redirect()->route('welcome');
+            }
+        }else {
+            return redirect()->route('login.index')->with('login', 'Bạn không có quyền admin');
         }
     }   
+    public function logout(){
+        Auth::logout();
+        return redirect()->route('login.index');
+    }
 }

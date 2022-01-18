@@ -31,16 +31,21 @@
 		<div class="card card-authentication1 mx-auto my-4">
 			<div class="card-body">
 				<div class="card-content p-2">
+					@if (Session::has('success'))
+					<p class="text-warning mb-0">{{ Session('success') }}? <a href="{{ route('login.index') }}">
+							Đăng Nhập</a></p>
+					@endif
 					<div class="text-center">
 						<img src="{{ asset('adminlte/images/logo-icon.png') }}" alt="logo icon">
 					</div>
-					<div class="card-title text-uppercase text-center py-3">Sign Up</div>
-					<form>
+					<div class="card-title text-uppercase text-center py-3"></div>
+					<form action="{{ route('register.index') }}" method="POST">
+						@csrf
 						<div class="form-group">
 							<label for="exampleInputName" class="sr-only">Name</label>
 							<div class="position-relative has-icon-right">
-								<input type="text" id="exampleInputName" class="form-control input-shadow"
-									placeholder="Enter Your Name">
+								<input type="text" id="exampleInputName" name="name"
+									class="form-control input-shadow" placeholder="Enter Your Name">
 								<div class="form-control-position">
 									<i class="icon-user"></i>
 								</div>
@@ -49,8 +54,8 @@
 						<div class="form-group">
 							<label for="exampleInputEmailId" class="sr-only">Email ID</label>
 							<div class="position-relative has-icon-right">
-								<input type="text" id="exampleInputEmailId" class="form-control input-shadow"
-									placeholder="Enter Your Email ID">
+								<input type="email" id="exampleInputEmailId" name="email"
+									class="form-control input-shadow" placeholder="Enter Your Email ID">
 								<div class="form-control-position">
 									<i class="icon-envelope-open"></i>
 								</div>
@@ -59,8 +64,8 @@
 						<div class="form-group">
 							<label for="exampleInputPassword" class="sr-only">Password</label>
 							<div class="position-relative has-icon-right">
-								<input type="text" id="exampleInputPassword" class="form-control input-shadow"
-									placeholder="Choose Password">
+								<input type="password" id="exampleInputPassword" name="password"
+									class="form-control input-shadow" placeholder="Choose Password">
 								<div class="form-control-position">
 									<i class="icon-lock"></i>
 								</div>
@@ -74,7 +79,7 @@
 							</div>
 						</div>
 
-						<button type="button" class="btn btn-light btn-block waves-effect waves-light">Sign
+						<button type="submit" class="btn btn-light btn-block waves-effect waves-light">Sign
 							Up</button>
 						<div class="text-center mt-3">Sign Up With</div>
 
@@ -97,19 +102,8 @@
 						here</a></p>
 			</div>
 		</div>
-
-		<!--Start Back To Top Button-->
 		<a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
-		<!--End Back To Top Button-->
-
-		<!--start color switcher-->
-
-		<!--end color switcher-->
-
 	</div>
-	<!--wrapper-->
-
-	<!-- Bootstrap core JavaScript-->
 	@include('admin.layout-admin.script')
 </body>
 

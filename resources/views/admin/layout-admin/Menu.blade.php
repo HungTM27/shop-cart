@@ -1,7 +1,7 @@
 <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
 	<div class="brand-logo">
 		<a href="">
-			<h5 class="logo-text">Mạnh Hùng</h5>
+			<h5 class="logo-text">{{ Auth()->user()->name }}</h5>
 		</a>
 	</div>
 	<ul class="sidebar-menu do-nicescrol">
