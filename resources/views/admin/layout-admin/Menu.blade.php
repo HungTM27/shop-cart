@@ -1,11 +1,13 @@
 <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
 	<div class="brand-logo">
 		<a href="">
-			<h5 class="logo-text">{{ Auth()->user()->name }}</h5>
+			{{-- <p class="logo-text" style="font-size:10px">Chào Mừng Bạn {{ Auth()->user()->name }} đến với quản
+				trị
+				viên </p> --}}
 		</a>
 	</div>
 	<ul class="sidebar-menu do-nicescrol">
-		<li class="sidebar-header">MAIN NAVIGATION</li>
+		<li class="sidebar-header">Chào Mừng Bạn {{ Auth()->user()->name }} đến với quản trị viên </li>
 		<li>
 			<a href="">
 				<i class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>

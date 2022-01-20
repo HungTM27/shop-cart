@@ -24,8 +24,17 @@ class RegisterController extends Controller
         $use->save();
         return redirect()->route('register.index')->with('success','Đăng Ký thành công ,');
     }
-    public function EditRegister($id){
+    public function Edit($id) {
         $use = User::find($id);
-        return view('admin.login.edit-user');
+        if(!$use){
+            return redirect()->route('login.index');
+        }
+        return view('admin.login.edit-user',compact('use'));
     }
+   public function SaveEditRegister($id,request $request) {
+            $user = new User();
+            $user->fill($request->all());
+            $user->save();
+            return redirect()->route('register.index')->with('success','Sửa tài khoản thành công ,');
+   }
 }

@@ -19,7 +19,8 @@ Route::get('dashboard',[DasboardhController::class, 'dashboard'])->name('dashboa
  });
 Route::prefix('tai-khoan')->group(function () {
     Route::get('/', [RegisterController::class, 'index'])->name('register');
-    Route::get('sua-tai-khoan/{id}', [RegisterController::class, 'EditRegister'])->name('register.edit');
+    Route::get('sua-tai-khoan/{id}', [RegisterController::class, 'Edit'])->name('register.edit');
+    Route::post('sua-tai-khoan/{id}', [RegisterController::class, 'SaveEditRegister']);
 });
 
 

@@ -44,7 +44,13 @@
 				</li>
 				<li class="nav-item"><a href="" class="nav-link">About</a></li>
 				<li class="nav-item"><a href="{{route('blog.index')}}" class="nav-link">Blog</a></li>
-				<li class="nav-item"><a href="{{ route('login.index') }}" class="nav-link">Login</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">Login</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown04">
+                            <a class="dropdown-item" href="{{route('login.index')}}">Đăng Nhập</a>
+                    </div>
+                </li>
 				<li class="nav-item cta cta-colored"><a href="{{route('cart.index')}}" class="nav-link"><span
 							class="icon-shopping_cart"></span>[0]</a></li>
 			</ul>

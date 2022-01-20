@@ -19,9 +19,11 @@
 				<td>{{ $p->name}}</td>
 				<td>{{ $p->email }}</td>
 				<td>@if ($p->role == 1)
-					<p class="text-secondary">Admin</p>
+					<p class="text-white">Admin</p>
 					@elseif ($p->role == 2)
-					<p class="text-white">user</p>
+					<p class="text-danger">User</p>
+					@elseif ($p->role == 3)
+					<p class="text-danger">Khoá tài khoản</p>
 					@endif
 				</td>
 				<td>

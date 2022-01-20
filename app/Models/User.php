@@ -24,7 +24,7 @@ class User extends Authenticatable
         'status',
         'role'
     ];
-    public $timestamp = false;
+    public $timestamp = true;
 
     /**
      * The attributes that should be hidden for serialization.

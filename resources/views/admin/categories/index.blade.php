@@ -13,8 +13,8 @@
 			<table class="table" id="data-table">
 				<thead>
 					<tr>
-						<th scope="col">Check All</th>
-						<th scope="col">ID</th>
+						<th scope="col">#</th>
+                        <th scope="col"></th>
 						<th scope="col">Name</th>
 						<th scope="col">Active</th>
 						<th scope="col">Action</th>
@@ -23,8 +23,9 @@
 				<tbody>
 					@foreach ($model as $c)
 					<tr>
-						<td><input name="select_all" value="" type="checkbox"></td>
+
 						<td>{{$loop->iteration}}</td>
+                        <td><input name="select_all" value="" type="checkbox"></td>
 						<td>{{$c->name}}</td>
 						<td>@if ($c->active == 1)
 							<p class="text-secondary">Active</p>
@@ -87,7 +88,7 @@ checkItAll.addEventListener('change', function() {
   if (checkItAll.checked) {
     inputs.forEach(function(input) {
       input.checked = true;
-    });  
+    });
   }
 });
 </script>

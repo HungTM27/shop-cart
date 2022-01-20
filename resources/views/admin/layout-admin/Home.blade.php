@@ -7,9 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 	<meta name="description" content="" />
 	<meta name="author" content="" />
-	<title>Dashtreme Admin
-	</title>
-	<!-- loader-->
+	<title>Quản Trị Admin</title>
 	@include('admin.layout-admin.style')
 	</script>
 
@@ -98,6 +96,9 @@
 
 		<div class="clearfix"></div>
 		<div class="content-wrapper">
+            @if(Session::has('success'))
+              <p class="text-center text-danger">{{Session('success')}}</p>
+            @endif
 			<h4>@yield('title')</h4>
 			@yield('content')
 			<div class="overlay toggle-menu"></div>
